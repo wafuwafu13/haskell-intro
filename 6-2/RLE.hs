@@ -25,4 +25,10 @@ toCharAndRunLength :: String -> [(Char, Int)]
 toCharAndRunLength = map toPair . group
 
 toPair :: String -> (Char, Int)
-toPair = undefined
+toPair str = (anyElem str, len str)
+
+anyElem :: [a] -> A
+anyElem = undefined
+
+len :: [a] -> Int
+len = undefined
