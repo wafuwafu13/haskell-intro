@@ -19,7 +19,13 @@ fromCharAndRunLength :: [(Char, Int)] -> String
 fromCharAndRunLength = concat . rls2strs
 
 rls2strs :: [(Char, Int)] -> [String]
-rls2strs = undefined
+rls2strs = foreach rls2str
+
+foreach :: (a -> b) -> [a] -> [b]
+foreach = undefined
+
+rl2str :: (Char, Int) -> String
+rl2str = undefined
 
 toCharAndRunLength :: String -> [(Char, Int)]
 toCharAndRunLength = undefined
