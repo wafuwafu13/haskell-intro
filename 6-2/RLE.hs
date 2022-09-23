@@ -13,16 +13,10 @@ import Data.List ( group )
 --
 
 rle :: String -> String
-rle = fromCharAndRunLength . toCharAndRunLength
-
-fromCharAndRunLength :: [(Char, Int)] -> String
-fromCharAndRunLength = concat . map rl2str
+rle = concat . map rl2str . map toPair . group
 
 rl2str :: (Char, Int) -> String
 rl2str (c, n) = c : show n
-
-toCharAndRunLength :: String -> [(Char, Int)]
-toCharAndRunLength = map toPair . group
 
 toPair :: String -> (Char, Int)
 toPair str = (head str, length str)
