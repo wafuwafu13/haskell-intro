@@ -13,8 +13,4 @@ import Data.List ( group )
 --
 
 rle :: String -> String
-rle = concatMap (\s -> rl2str (head s, length s)) . group
-
-rl2str :: (Char, Int) -> String
-rl2str (c, n) = c : show n
-
+rle = concatMap (\s -> head s : show (length s)) . group
