@@ -13,10 +13,8 @@ import Data.List ( group )
 --
 
 rle :: String -> String
-rle = concatMap (rl2str . toPair) . group
+rle = concatMap (\s -> rl2str (head s, length s)) . group
 
 rl2str :: (Char, Int) -> String
 rl2str (c, n) = c : show n
 
-toPair :: String -> (Char, Int)
-toPair str = (head str, length str)
