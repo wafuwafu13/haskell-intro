@@ -13,7 +13,7 @@ import Data.List ( group )
 --
 
 rle :: String -> String
-rle = concat . map rl2str . map toPair . group
+rle = concatMap (rl2str . toPair) . group
 
 rl2str :: (Char, Int) -> String
 rl2str (c, n) = c : show n
